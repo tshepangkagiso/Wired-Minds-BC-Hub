@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
     res.render('index')
 });
 //routes
-app.use('/', mainRouter);
+app.use('https://wired-bc.onrender.com/', mainRouter);
 
 // we want this middleware to run just before app listens
 app.use(eventHandler);
