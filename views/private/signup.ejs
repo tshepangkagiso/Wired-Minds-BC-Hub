@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Signup Page</title>
+        <!-- Required meta tags for responsiveness -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS link -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom styles for the signup page -->
+        <style>
+            body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #2e3141;
+            background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8));
+            background-size: auto
+            }
+
+            .signup-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            background-color: #fff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="signup-container">
+            <h2 class="mb-4">Signup</h2>
+        
+            <!-- Signup form -->
+            <form action="/register" method="post"> <!-- Assuming the signup endpoint is '/signup' -->
+                <!-- Full Name input -->
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+        
+                <!-- Student Number input -->
+                <div class="form-group">
+                    <label for="studentNumber">Student Number</label>
+                    <input type="text" class="form-control" id="studentNumber" name="studentNumber" placeholder="Enter your student number" required>
+                </div>
+        
+                <!-- Course Name input -->
+                <div class="form-group">
+                    <label for="qualificationName">Qualification Name</label>
+                    <input type="text" class="form-control" id="qualificationName" name="qualificationName" placeholder="Enter your qualification name" required>
+                </div>
+        
+                <!-- Password input -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+        
+                <!-- Display signup error message if any -->
+                <% if (typeof errorMessage !== 'undefined') { %>
+                    <p class="text-danger"><%= errorMessage %></p>
+                <% } %>
+        
+                <!-- Signup button -->
+                <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                <br>
+                <a href="http://localhost:3500/login">login</a>
+                <br>
+                <a href="http://localhost:3500">Home</a>
+            </form>
+        </div>
+
+        <!-- Bootstrap JS and Popper.js scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+
+</html>

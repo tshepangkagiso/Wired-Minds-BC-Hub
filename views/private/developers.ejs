@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Developers page</title>
+        <!-- Include Bootstrap CSS (adjust the path if needed) -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+            background-color: #2e3141;
+            background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8));
+            background-size: auto
+            }
+            .container {
+            margin-top: 100px;
+            text-align: center;
+            color: white;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="container">
+            <h1 class="display-4">Welcome <%= student.fullName %>!</h1>
+            <p class="lead">You have successfully logged in.</p>
+            <p>Your Student Number is <%= student.studentNumber %></p>
+
+            <!-- Logout form -->
+            <form action="/logout" method="post" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        </div>
+
+        <!-- Include Bootstrap JS (optional, adjust the path if needed) -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    </body>
+</html>

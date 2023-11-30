@@ -1,0 +1,33 @@
+20231129	23:32:26	1842e1af-4978-4c95-8d05-c5496e429b23	ReferenceError: C:\Users\27660\Desktop\Wired Minds BC Hub\views\developers.ejs:22
+    20| 
+    21|         <div class="container">
+ >> 22|             <h1 class="display-4">Welcome <%= fullName %>!</h1>
+    23|             <p class="lead">You have successfully logged in.</p>
+    24|             <p>Your Student Number is <%= studentNumber %></p>
+    25|             <a class="btn btn-primary" href="/developer" role="button">Go to Developer Page</a>
+
+fullName is not defined	POST	/login	http://localhost:3500
+20231129	23:34:37	ff2b37b4-8127-4664-a63a-0ad65ab1ee26	ReferenceError: C:\Users\27660\Desktop\Wired Minds BC Hub\views\developers.ejs:22
+    20| 
+    21|         <div class="container">
+ >> 22|             <h1 class="display-4">Welcome <%= student.fullName %>!</h1>
+    23|             <p class="lead">You have successfully logged in.</p>
+    24|             <p>Your Student Number is <%= student.studentNumber %></p>
+    25|             <a class="btn btn-primary" href="/developer" role="button">Go to Developer Page</a>
+
+student is not defined	POST	/login	http://localhost:3500
+20231129	23:39:39	24fb6b46-eee3-499c-ae4e-9360c9ca8e6e	TypeError: Cannot read properties of undefined (reading 'username')	POST	/logout	http://localhost:3500
+20231130	11:13:35	b2fb055f-65ef-4e30-a71d-383ff9a5f3a6	ReferenceError: C:\Users\27660\Desktop\Wired Minds BC Hub\views\private\developers.ejs:25
+    23| 
+    24|         <div class="container">
+ >> 25|             <h1 class="display-4">Welcome <%= fullName %>!</h1>
+    26|             <p class="lead">You have successfully logged in.</p>
+    27|             <p>Your Student Number is <%= studentNumber %></p>
+    28|             <a class="btn btn-primary" href="/developer" role="button">Go to Developer Page</a>
+
+fullName is not defined	POST	/login	http://localhost:3500
+20231130	11:16:35	411f01bf-f76c-40e4-8615-521a952868e9	TypeError: Cannot read properties of undefined (reading 'username')	POST	/logout	http://localhost:3500
+20231130	11:17:32	9d94f895-ac13-43e0-8b6b-08b74105a735	TypeError: Cannot read properties of undefined (reading 'username')	POST	/logout	http://localhost:3500
+20231130	11:18:51	b0907d93-a8a0-4612-8689-cce9aeea4d32	TypeError: Cannot read properties of undefined (reading 'username')	POST	/logout	http://localhost:3500
+20231130	11:18:55	28cac27a-233c-4779-803f-d3db52c4dcd8	TypeError: Cannot read properties of undefined (reading 'username')	POST	/logout	http://localhost:3500
+20231130	11:29:45	0014946a-db64-492b-a136-21d2ea3261de	ReferenceError: logEvents is not defined	POST	/logout	http://localhost:3500
