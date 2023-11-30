@@ -455,3 +455,8 @@
 20231130	18:41:06	08076e70-02b8-4217-98ad-9ab13cd8d085	GET	/images/bg.jpg	undefined
 20231130	18:41:34	0b2c98a4-4f60-47aa-a326-884ae224566d	GET	/	undefined
 20231130	18:44:53	0e511de0-cf6e-4f93-8d04-a4bdd11d13c6	GET	/	undefined
+20231130	18:56:21	373ceb7d-f6bb-41a6-8b96-ad2c0eceaa1c	GET	/	undefined
+20231130	18:56:26	8bcdbd60-7677-4eb5-be4c-d01ed43058dc	GET	/generic	undefined
+20231130	18:56:26	41ebd919-4690-447b-a6ee-11338e74d5c4	GET	/favicon.ico	undefined
+20231130	18:56:33	cadfda86-2511-4e00-9cf5-d7328f0405cb	GET	/login	undefined
+20231130	18:56:41	b7270e8c-a407-4349-827b-397d7d285a7c	GET	/signup	undefined
