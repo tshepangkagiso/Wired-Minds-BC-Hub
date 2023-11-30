@@ -17,25 +17,31 @@ connectDB()
 
 
 //middleware
-app.use('/assets', express.static('views/assets'));//Set 'assets' folder as the static folder for serving CSS, images, etc.
+app.use('/assets', express.static('views/assets'));//Set 'assets' folder as the static folder for serving CSS
+app.use('/images', express.static('views/images'));//Set 'assets' folder as the static folder for images, etc.
+
 app.set('view engine', 'ejs');//This line tells Express to use EJS as the view engine for your application
 app.use(express.urlencoded({extended:false}));// Parse URL-encoded form data
+
 app.use(logger);
 app.use( cors(corsOptions) );// Using the 'cors' middleware to handle Cross-Origin Resource Sharing (CORS) in Express.js
+
 app.use(express.json());
 app.use(cookieParser());// Using cookieParser middleware to parse incoming request cookies
 
 
+//Main Route with Routes
 app.get('/', (req, res) => {
     res.render('index')
 });
-//routes
+
 app.use('/', mainRouter);
 
-// we want this middleware to run just before app listens
+// Advanced Middleware, it needs to be here
 app.use(eventHandler);
 
-//server
+
+//server and database connection
 mongoose.connection.once('open', () => {
     console.log('connected to mongodb');
     app.listen(port, ()=>{console.log(`server running on port ${port}`)})     

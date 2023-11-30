@@ -8,6 +8,9 @@ const {logger, logEvents} = require('../middleware/logger');
 const jwt = require('jsonwebtoken');
 const secretKey = process.env.SECRET_KEY 
 
+//middleware
+router.use('/assets', express.static('views/assets'));//Set 'assets' folder as the static folder for serving CSS
+router.use('/images', express.static('views/images'));//Set 'assets' folder as the static folder for images, etc.
 
 router.get('/generic', (req, res) => {
     res.render('generic');
