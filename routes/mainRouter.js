@@ -18,11 +18,11 @@ router.get('/elements', (req, res) => {
 });
 // Developer page (GET /developer)
 router.get('/developers',  verifyAndRefreshToken, (req, res) => {
-  res.render('private/developers');
+  res.render('developers');
 });
 
 router.get('/signup', (req, res) => {
-    res.render('private/signup')
+    res.render('signup')
 });   
 // Register a student (POST /register)
 router.post('/register', async (req, res) => {
@@ -32,7 +32,7 @@ router.post('/register', async (req, res) => {
       // Check if the student already exists
       const existingStudent = await Student.findOne({ studentNumber });
       if (existingStudent) {
-        return res.render('status/400');
+        return res.render('400');
       }
   
       // Hash the password
@@ -50,16 +50,16 @@ router.post('/register', async (req, res) => {
       await newStudent.save();
   
       //res.status(201).json({ message: 'Student registered successfully' });
-      res.redirect('private/login')
+      res.redirect('login')
     } catch (error) {
       console.error(error);
       //res.status(500).json({ message: 'Internal Server Error' });
-      res.redirect('private/signup')
+      res.redirect('signup')
     }
   });
 
 router.get('/login', (req, res) => {
-    res.render('private/login')
+    res.render('login')
 });
 // Login (POST /login)
 router.post('/login', async (req, res) => {
@@ -70,14 +70,14 @@ router.post('/login', async (req, res) => {
     const student = await Student.findOne({ fullName });
 
     if (!student) {
-      return  res.render('status/401');
+      return  res.render('401');
     }
 
     // Compare the provided password with the hashed password
     const passwordMatch = await bcrypt.compare(password, student.password);
 
     if (!passwordMatch) {
-      return res.render('status/401');
+      return res.render('401');
     }
 
     // Generate a JWT token and refresh token
@@ -85,12 +85,12 @@ router.post('/login', async (req, res) => {
     const refreshToken = jwt.sign({ student: fullName}, secretKey, { expiresIn: '3d' });
 
     // Render to the developer page with a student info
-    res.render('private/developers',{student: student});
+    res.render('developers',{student: student});
 
   } catch (error) {
     console.error(error);
     // Redirect to the index page if needed
-    res.redirect('private/login');
+    res.redirect('login');
   }
 });
 
@@ -115,15 +115,15 @@ router.post('/logout', (req, res) => {
   // Logging the logout
   logEvents(`Logout\t${fullName}\t${req.headers.origin}`, 'logoutLog.log');
 
-  res.redirect('private/login');
+  res.redirect('login');
 });
 
 router.get('/BadRequest', (req, res) => {
-  res.render('status/400');
+  res.render('400');
 });
 
 router.get('/Unauthorized', (req, res) => {
-  res.render('status/401');
+  res.render('401');
 });
 
 

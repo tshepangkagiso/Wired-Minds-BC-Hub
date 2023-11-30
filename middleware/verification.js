@@ -12,7 +12,7 @@ const verifyAndRefreshToken = async (req, res, next) => {
   //console.log('Token:', token); for debugging
 
   if (!token) {
-    return  res.render('status/401');
+    return  res.render('401');
   }
 
   jwt.verify(token, secretKey, async (err, decoded) => {
@@ -22,12 +22,12 @@ const verifyAndRefreshToken = async (req, res, next) => {
         const refreshToken = req.headers['refresh-token'];
 
         if (!refreshToken) {
-          return  res.render('status/401');
+          return  res.render('401');
         }
 
         jwt.verify(refreshToken, secretKey, async (refreshErr, refreshDecoded) => {
           if (refreshErr) {
-            return  res.render('status/401');
+            return  res.render('401');
           }
 
           // Generate a new access token
