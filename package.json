@@ -1,6 +1,6 @@
 {
   "name": "wired-minds-bc-hub",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Innovation Hub for Belgium Campus by its students",
   "main": "server.js",
   "scripts": {
@@ -23,6 +23,8 @@
     "mongodb": "^6.3.0",
     "mongoose": "^8.0.2",
     "mongoose-sequence": "^5.3.1",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^2.6.1",
     "uuid": "^9.0.1"
   },
   "devDependencies": {

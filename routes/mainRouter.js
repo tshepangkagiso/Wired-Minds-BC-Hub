@@ -6,7 +6,7 @@ const Student = require('../models/Student');
 const verifyAndRefreshToken = require('../middleware/verification');
 const {logger, logEvents} = require('../middleware/logger');
 const jwt = require('jsonwebtoken');
-const secretKey = process.env.SECRET_KEY 
+const secretKey = process.env.SECRET_KEY
 
 //middleware
 router.use('/assets', express.static('views/assets'));//Set 'assets' folder as the static folder for serving CSS
