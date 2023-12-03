@@ -13,12 +13,11 @@ const port = process.env.PORT || 3000
 const mainRouter = require('./routes/mainRouter');
 const cron = require('node-cron');
 const fetch = require('node-fetch').default;
-const { CronIndex1, CronIndex2, CronIndex3,apiIndex } = require('./middleware/backgroundjobs/cronIndex');
-const {CronElements1,CronElements2,CronElements3,apiElements} = require('./middleware/backgroundjobs/cronElements');
-const { CronGeneric1, CronGeneric2, CronGeneric3,apiGeneric } = require('./middleware/backgroundjobs/cronGeneric');
+const { CronIndex1,apiIndex } = require('./middleware/backgroundjobs/cronIndex');
+
 
 //database configuration
-connectDB()
+connectDB();
 
 
 //middleware
@@ -46,18 +45,7 @@ app.use('/', mainRouter);
 app.use(eventHandler);
 
 // Start the cron jobs
-
-CronIndex1(apiIndex) 
-CronElements1(apiElements)
-CronGeneric1(apiGeneric)
-
-CronIndex2(apiIndex)
-CronElements2(apiElements) 
-CronGeneric2(apiGeneric)
-
-CronIndex3(apiIndex)
-CronElements3(apiElements)
-CronGeneric3(apiGeneric)
+CronIndex1(apiIndex); 
 
 
 //server and database connection
